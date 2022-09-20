@@ -1,14 +1,9 @@
 # use-dark-mode
 
+> This is a fork of [use-dark-mode](https://github.com/donavon/use-dark-mode) by [donovan](https://github.com/donavon) which adds some much needed maintenance support for React 18.
+
 A custom [React Hook](https://reactjs.org/docs/hooks-overview.html) to help you implement a "dark mode" component for your application.
 The user setting persists to `localStorage`.
-
-❤️ it? ⭐️ it on [GitHub](https://github.com/donavon/use-dark-mode/stargazers)
-or [Tweet](https://twitter.com/intent/tweet?text=Check%20out%20the%20useDarkMode%20custom%20React%20Hook%20that%20simplifies%20adding%20a%20persistent%20dark%20mode%20setting%20to%20your%20app.&url=https%3A%2F%2Fgithub.com%2Fdonavon%2Fuse-dark-mode&via=donavon&hashtags=reactjs,hooks,darkmode)
-about it.
-
-[![npm version](https://badge.fury.io/js/use-dark-mode.svg)](https://badge.fury.io/js/use-dark-mode) [![Build Status](https://travis-ci.com/donavon/use-dark-mode.svg?branch=master)](https://travis-ci.com/donavon/use-dark-mode) [![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors)
-[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Check%20out%20the%20useDarkMode%20custom%20React%20Hook%20that%20simplifies%20adding%20a%20persistent%20dark%20mode%20setting%20to%20your%20app.&url=https%3A%2F%2Fgithub.com%2Fdonavon%2Fuse-dark-mode&via=donavon&hashtags=reactjs,hooks,darkmode)
 
 ![usedarkmode-small](https://user-images.githubusercontent.com/887639/51113468-079ee100-17d0-11e9-8a35-e29b12b74740.gif)
 
@@ -76,8 +71,8 @@ by default) and an optional `darkModeConfig` object. The configuration object ma
 | `classNameLight`  | The class to apply. Default = `light-mode`.                                                                                                                                                                                                                                                                               |
 | `element`         | The element to apply the class name. Default = `document.body`.                                                                                                                                                                                                                                                           |
 | `onChange`        | A function that will be called when the dark mode value changes and it is safe to access the DOM (i.e. it is called from within a `useEffect`). If you specify `onChange` then `classNameDark`, `classNameLight`, and `element` are ignored (i.e. no classes are automatically placed on the DOM). You have full control! |
-| `storageKey`      | A string that will be used by the `storageProvider` to persist the dark mode value. If you specify a value of `null`, nothing will be persisted. Default = `darkMode`.                                                                                                                                                                                                                   |
-| `storageProvider` | A storage provider. Default = `localStorage`. You will generally never need to change this value.                                                                                                                                                                                                                       |
+| `storageKey`      | A string that will be used by the `storageProvider` to persist the dark mode value. If you specify a value of `null`, nothing will be persisted. Default = `darkMode`.                                                                                                                                                    |
+| `storageProvider` | A storage provider. Default = `localStorage`. You will generally never need to change this value.                                                                                                                                                                                                                         |
 
 ### Return object
 
@@ -173,7 +168,7 @@ export default MyDocument;
 Here is a list of apps build with `use-dark-mode`.
 If you have an app you would like to include on this list, open a PR.
 
-* [Demo App on CodeSandbox](https://codesandbox.io/s/mzj64x80ny) - by [@donavon](https://twitter.com/donavon)
+- [Demo App on CodeSandbox](https://codesandbox.io/s/mzj64x80ny) - by [@donavon](https://twitter.com/donavon)
 
 ## License
 
@@ -203,6 +198,7 @@ Thanks goes to these wonderful people ([emoji key](https://github.com/all-contri
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
