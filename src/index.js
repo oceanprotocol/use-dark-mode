@@ -30,8 +30,7 @@ const useDarkMode = (
   );
 
   const stateChangeCallback = useMemo(
-    () =>
-      onChange || getDefaultOnChange(element, classNameDark, classNameLight),
+    () => onChange || getDefaultOnChange(element, classNameDark, classNameLight),
     [onChange, element, classNameDark, classNameLight, getDefaultOnChange]
   );
 
@@ -51,7 +50,7 @@ const useDarkMode = (
     value: state,
     enable: useCallback(() => setState(true), [setState]),
     disable: useCallback(() => setState(false), [setState]),
-    toggle: useCallback(() => setState((current) => !current), [setState]),
+    toggle: useCallback(() => setState(current => !current), [setState]),
   };
 };
 

@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import 'jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 
 import initialize from '../src/initialize';
 
 const noop = () => {};
 
-const createTestElement = arr => ({
+const createTestElement = (arr) => ({
   classList: {
     add: (className) => {
       arr.push({ method: 'add', className });
@@ -17,7 +17,7 @@ const createTestElement = arr => ({
 });
 
 const mockedWindowSupported = {
-  matchMedia: query => ({
+  matchMedia: (query) => ({
     addListener: noop,
     removeListener: noop,
     media: query,
@@ -34,7 +34,10 @@ const mockedWindowNotSupported = {
   }),
 };
 
-const testSuite = (g = global, { getInitialValue, getDefaultOnChange, mediaQueryEventTarget }) => {
+const testSuite = (
+  g = global,
+  { getInitialValue, getDefaultOnChange, mediaQueryEventTarget }
+) => {
   const global = g;
 
   describe('getInitialValue', () => {
@@ -45,7 +48,8 @@ const testSuite = (g = global, { getInitialValue, getDefaultOnChange, mediaQuery
       const mql = global.matchMedia
         ? global.matchMedia('(prefers-color-scheme: dark)')
         : {};
-      const isColorSchemeQuerySupported = mql.media === '(prefers-color-scheme: dark)';
+      const isColorSchemeQuerySupported =
+        mql.media === '(prefers-color-scheme: dark)';
 
       // const isColorSchemeQuerySupported = !!global.matchMedia;
 

@@ -5,7 +5,7 @@ import useDarkMode from '../src';
 
 afterEach(cleanup);
 
-const createTestElement = (arr) => ({
+const createTestElement = arr => ({
   classList: {
     add: (className) => {
       arr.push({ method: 'add', className });
@@ -77,7 +77,7 @@ describe('useDarkMode without onChange', () => {
     let callback;
 
     const mockGlobal = {
-      matchMedia: (media) => ({
+      matchMedia: media => ({
         media,
         match: false,
         addListener: (handler) => {
@@ -102,7 +102,7 @@ describe('useDarkMode without onChange', () => {
     let callback;
 
     const mockGlobal = {
-      matchMedia: (media) => ({
+      matchMedia: media => ({
         media,
         match: true,
         addListener: (handler) => {
